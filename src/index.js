@@ -324,8 +324,8 @@ export const Header = ({ navigation, siteName, date, time, settings }) => {
       { navigation }
 
       <Flex align="center" direction="column" align="center" justify="center">
-        <Heading fontSize='1.25rem' color="#fff" mt={2} mb={0} fontFamily="Industry">{siteName}</Heading>
-        <Text fontSize='.88rem' color="#fff" mt={0} mb={2} fontFamily="Industry">{date} - {time}</Text>
+        <Heading fontSize={14} color="#fff" mt={2} mb={0} fontFamily="Industry">{siteName}</Heading>
+        <Text fontSize={12} color="#fff" mt={0} mb={2} fontFamily="Industry">{date} - {time}</Text>
       </Flex>
 
       { settings }
