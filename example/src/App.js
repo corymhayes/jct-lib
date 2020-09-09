@@ -22,6 +22,16 @@ const App = () => {
         />
 
       </EquipmentContainer>
+      <TrendChartPSI trendData={[
+        {mDate: '08-31-2020', mTime: 12, SWDPRESS: 863.97},
+        {mDate: '08-31-2020', mTime: 12, SWDPRESS: 796.52},
+        {mDate: '08-31-2020', mTime: 12, SWDPRESS: 1240.10},
+        {mDate: '08-31-2020', mTime: 12, SWDPRESS: 1265.43},
+        {mDate: '08-31-2020', mTime: 13, SWDPRESS: 988.94},
+        {mDate: '08-31-2020', mTime: 13, SWDPRESS: 1240.10},
+        {mDate: '08-31-2020', mTime: 13, SWDPRESS: 877.70},
+        {mDate: '08-31-2020', mTime: 13, SWDPRESS: 807.20},
+      ]} comp="TEST" maxPressure={1500} subtractor={250} hourCount={4} />
     </>
   )
 }

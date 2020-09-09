@@ -209,7 +209,7 @@ export const TrendChartFT = ({ trendData, comp, height, hourCount }) => {
  * 
  * */
 
-export const TrendChartPSI = ({ trendData, comp, maxPressure, hourCount }) => {
+export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCount }) => {
 
   const data = trendData
   const company = comp
@@ -248,7 +248,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, hourCount }) => {
   }
 
 
-  for(let i = 0; i < 5; i++){ pressureLevels.push(pressureLevels[i] - 50) }
+  for(let i = 0; i < 7; i++){ pressureLevels.push(pressureLevels[i] - subtractor) }
   
   
   return(
@@ -257,7 +257,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, hourCount }) => {
         <VictoryAxis dependentAxis
           standalone={false}
           tickValues={pressureLevels.reverse()}
-          domain={[ pressureLevels[0], pressureLevels[5] ]}
+          domain={[ pressureLevels[0], pressureLevels[7] ]}
           padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
           style={{
             axis: { strokeOpacity: 0 },
@@ -279,7 +279,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, hourCount }) => {
         <VictoryArea 
           standalone={false}
           data={newData}
-          domain={{ x: [0, 23], y: [pressureLevels[0], pressureLevels[5]] }}
+          domain={{ x: [0, 23], y: [pressureLevels[0], pressureLevels[7]] }}
           interpolation='natural'
           padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
           style={{
