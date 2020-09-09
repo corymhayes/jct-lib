@@ -258,7 +258,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
           standalone={false}
           tickValues={pressureLevels.reverse()}
           domain={[ pressureLevels[0], pressureLevels[7] ]}
-          padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
+          padding={{ top: 50, left: 45, right: 50, bottom: 50 }}
           style={{
             axis: { strokeOpacity: 0 },
             tickLabels: { fontFamily: 'Industry', fill: '#292929' },

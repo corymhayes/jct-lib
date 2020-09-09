@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header, GaugeChart, EquipmentContainer, TrendChartFT, TrendChartPSI, TrendContainer } from 'jct'
-import { TabPanels, TabPanel, TabList, Tab } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/core'
 import 'jct/dist/index.css'
 
 import NavigationDrawer from './NavigationDrawer'
@@ -8,7 +8,7 @@ import SettingsDrawer from './SettingsDrawer'
 
 const App = () => {
   return (
-    <>
+    <Box px={3}>
       <Header siteName="JCT" date="12-12-2020" time="1:00 PM" mavigation={ <NavigationDrawer /> } settings={ <SettingsDrawer iconImage="none" /> } />
         {/* <NavigationDrawer />
         <SettingsDrawer iconImage="settings" /> */}
@@ -32,7 +32,7 @@ const App = () => {
         {mDate: '08-31-2020', mTime: 13, SWDPRESS: 877.70},
         {mDate: '08-31-2020', mTime: 13, SWDPRESS: 807.20},
       ]} comp="TEST" maxPressure={1500} subtractor={250} hourCount={4} />
-    </>
+    </Box>
   )
 }
 
