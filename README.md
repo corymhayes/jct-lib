@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save jct
+npm install --save jct-lib
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save jct
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'jct'
+import { MyComponent } from 'jct-lib'
 import 'jct/dist/index.css'
 
 class Example extends Component {
