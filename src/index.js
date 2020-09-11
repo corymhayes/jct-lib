@@ -154,7 +154,7 @@ export const TrendChartFT = ({ trendData, comp, height, hourCount }) => {
 
   return(
     <div>
-      <svg style={{ boxSizing: 'border-box', display: 'inline' }} viewBox="0 0 425 300">
+      <svg style={{ boxSizing: 'border-box', display: 'inline', margin: '0 10px' }} viewBox="0 0 440 300">
         <VictoryAxis dependentAxis
           standalone={false}
           tickValues={levels}
@@ -164,7 +164,7 @@ export const TrendChartFT = ({ trendData, comp, height, hourCount }) => {
             tickLabels: { fontFamily: 'Industry', fill: '#' },
             grid: { stroke: '#eee' }
           }}
-          padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
+          padding={{ top: 50, left: 45, right: 40, bottom: 50 }}
         />
         
         <VictoryAxis
@@ -189,7 +189,7 @@ export const TrendChartFT = ({ trendData, comp, height, hourCount }) => {
               fillOpacity: 0.7,
             },
           }}
-          padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
+          padding={{ top: 50, left: 45, right: 50, bottom: 50 }}
         />
         <defs>
           <linearGradient id={comp} x1="0%" x2="0%" y1="0%" y2="100%">
@@ -253,12 +253,12 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
   
   return(
     <div>
-      <svg style={{ boxSizing: 'border-box', display: 'inline' }} viewBox="0 0 425 300">
+      <svg style={{ boxSizing: 'border-box', display: 'inline', margin: '0 10px' }} viewBox="0 0 440 300">
         <VictoryAxis dependentAxis
           standalone={false}
           tickValues={pressureLevels.reverse()}
           domain={[ pressureLevels[0], pressureLevels[7] ]}
-          padding={{ top: 50, left: 45, right: 50, bottom: 50 }}
+          padding={{ top: 50, left: 55, right: 40, bottom: 50 }}
           style={{
             axis: { strokeOpacity: 0 },
             tickLabels: { fontFamily: 'Industry', fill: '#292929' },
@@ -281,7 +281,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
           data={newData}
           domain={{ x: [0, 23], y: [pressureLevels[0], pressureLevels[7]] }}
           interpolation='natural'
-          padding={{ top: 50, left: 40, right: 50, bottom: 50 }}
+          padding={{ top: 50, left: 55, right: 50, bottom: 50 }}
           style={{
             data: {
               stroke: '#ff7e3c',
@@ -320,12 +320,12 @@ export const Header = ({ navigation, siteName, date, time, settings }) => {
       bg="#292929"
       color="white"
       mb={3}
+      position="sticky"
+      top={0}
     >
       { navigation }
 
       <Flex align="center" direction="column" align="center" justify="center">
-        {/* <Heading fontSize={3} color="#fff" mt={2} mb={0} fontFamily="Industry">{siteName}</Heading>
-        <Text fontSize={1} color="#fff" mt={0} mb={2} fontFamily="Industry">{date} - {time}</Text> */}
         <Heading fontSize='1.25rem' color="#fff" mt={2} mb={0} fontFamily="Industry">{siteName}</Heading>
         <Text fontSize='.88rem' color="#fff" mt={0} mb={2} fontFamily="Industry">{date} - {time}</Text>
       </Flex>
