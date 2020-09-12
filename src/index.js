@@ -209,7 +209,7 @@ export const TrendChartFT = ({ trendData, comp, height, hourCount }) => {
  * 
  * */
 
-export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCount }) => {
+export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCount, gridLevels }) => {
 
   const data = trendData
   const company = comp
@@ -248,7 +248,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
   }
 
 
-  for(let i = 0; i < 7; i++){ pressureLevels.push(pressureLevels[i] - subtractor) }
+  for(let i = 0; i < gridLevels; i++){ pressureLevels.push(pressureLevels[i] - subtractor) }
   
   
   return(
@@ -257,7 +257,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
         <VictoryAxis dependentAxis
           standalone={false}
           tickValues={pressureLevels.reverse()}
-          domain={[ pressureLevels[0], pressureLevels[7] ]}
+          domain={[ pressureLevels[0], pressureLevels[gridLevels] ]}
           padding={{ top: 50, left: 55, right: 40, bottom: 50 }}
           style={{
             axis: { strokeOpacity: 0 },
@@ -279,7 +279,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
         <VictoryArea 
           standalone={false}
           data={newData}
-          domain={{ x: [0, 23], y: [pressureLevels[0], pressureLevels[7]] }}
+          domain={{ x: [0, 23], y: [pressureLevels[0], pressureLevels[gridLevels]] }}
           interpolation='natural'
           padding={{ top: 50, left: 55, right: 50, bottom: 50 }}
           style={{
@@ -289,7 +289,7 @@ export const TrendChartPSI = ({ trendData, comp, maxPressure, subtractor, hourCo
               fillOpacity: 0.7,
             },
           }}
-          y0={() => pressureLevels[0]}
+          y0={() => 0}
         />
         <defs>
           <linearGradient id={comp} x1="0%" x2="0%" y1="0%" y2="100%">

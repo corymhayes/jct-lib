@@ -31,7 +31,11 @@ const App = () => {
         {mDate: '08-31-2020', mTime: 13, SWDPRESS: 1240.10},
         {mDate: '08-31-2020', mTime: 13, SWDPRESS: 877.70},
         {mDate: '08-31-2020', mTime: 13, SWDPRESS: 807.20},
-      ]} comp="TEST" maxPressure={1500} subtractor={250} hourCount={4} />
+        {mDate: '08-31-2020', mTime: 14, SWDPRESS: 988.94},
+        {mDate: '08-31-2020', mTime: 14, SWDPRESS: 1240.10},
+        {mDate: '08-31-2020', mTime: 14, SWDPRESS: 877.70},
+        {mDate: '08-31-2020', mTime: 14, SWDPRESS: 807.20},
+      ]} comp="TEST" maxPressure={2000} subtractor={250} hourCount={4} />
     </Box>
   )
 }
