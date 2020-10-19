@@ -322,6 +322,7 @@ export const Header = ({ navigation, siteName, date, time, settings }) => {
       mb={3}
       position="sticky"
       top={0}
+      zIndex={9999}
     >
       { navigation }
 
